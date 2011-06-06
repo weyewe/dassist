@@ -9,6 +9,7 @@ gem 'mysql2', '< 0.3'
 gem "cancan"
 gem "devise"
 gem 'rake', '~> 0.8.7'
+gem 'acts_as_list'
 # gem "jammit"
 # gem "closure-compiler"
 
