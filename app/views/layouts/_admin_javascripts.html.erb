@@ -1,5 +1,6 @@
 <!--Scripts-->
 <!--jQuery-->
+<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
 <script src="/javascripts/jquery/jquery.js" type="text/javascript"></script>
 <!--jQuery Superfish-->
 <script src="/javascripts/jquery-superfish/superfish.js" type="text/javascript"></script>
@@ -17,5 +18,15 @@
 <!--jQuery Facebox-->
 <script src="/javascripts/jquery-facebox/facebox.js" type="text/javascript"></script>
 <link rel="stylesheet" href="/javascripts/jquery-facebox/facebox.css" type="text/css" />
+
+
+
+<!-- jQuery UI -->
+<!-- <script src="/javascripts/autoresize.jquery.min.js" type="text/javascript"></script> -->
+<script src="/javascripts/auto-grow.js" type="text/javascript"></script>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
+<!-- autoResize text area -->
+
 <!--Script Loader-->
 <script src="/javascripts/loader.js" type="text/javascript"></script>
+

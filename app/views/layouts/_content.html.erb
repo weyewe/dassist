@@ -1,445 +1,92 @@
 <!--Content-->
 <div id="content">
-  <div class="container clearfix"> 
-    <!--Statistics-->
+  <div class="container clearfix" id="projects"> 
     
-
-
-
-
-
-    <!--Table-->
-    <div class="box"> 
-      <!--Title-->
-      <div class="header">
-        <h2><a href="#">Menara Telkomsel untuk Ekor</a></h2>
-        <!--Draggable--> 
-        <span class="draggable"></span> <span class="toggle"></span> 
+    <% for project in @projects %>
+      <div class="box hidden" id="project_<%= project.id %>"> 
+        <!--Title-->
+        <div class="header">
+          <h2><a href="#"><%= project.name %></a></h2>
+          <!--Draggable--> 
+          <span class="draggable"></span> <span class="toggle"></span> 
+        </div>
+        <%= render :partial => "layouts/box_content" , :locals => {:project => project} %>
       </div>
-        <!--Content-->
-      <div class="content padding">
-        <ul class="inbox">
-          <li> 
-            <!--Avatar--> 
-            <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-            <!--Author-->
-            <div class="author"> <a href="#"></a>
-              <h4><a href="#">Willy Y. Wirawan</a></h4>
-            </div>
-            <!--Meta-->
-            <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-            <!--Body-->
-            <div class="body">
-              <p>
-                Boss, menara Telkomsel di Ekor butuh dipercepat nih. Soalnya control keadaan lapangan
-                sangat sulit kalau musti melalui telephone satelit (secara kita cuman punya 2 biji).
-              </p>
-            </div>
-          </li>
-              <!--separator-->
-          <li class="separator"></li>
-          <li> 
-              <!--Avatar--> 
-              <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-              <!--Author-->
-              <div class="author"> <a href="#"></a>
-                <h4><a href="#">Big Boss</a></h4>
-              </div>
-              <!--Meta-->
-              <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-              <!--Body-->
-              <div class="body">
-                <p>
-                  Emang kenapa yah Wil? Bukannya kata Pak Norman sudah bisa buat sms atau nelpon 2-3 orang? 
-                  Lagipula, saya sudah tanya Pak LHS. Kata dia masih ok tuh. 
-                </p>
-              </div>
-            </li>
-              <!--separator-->
-            <li class="separator"></li>
-            <li> 
-                <!--Avatar--> 
-                <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-                <!--Author-->
-                <div class="author"> <a href="#"></a>
-                  <h4><a href="#">Donny A.</a></h4>
-                </div>
-                <!--Meta-->
-                <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-                <!--Body-->
-                <div class="body">
-                  <p>
-                    Buat komunikasi sih emang masih OKE. Cumannya, itu repeater, kita sudah deal ama BGS 
-                    buat gratis pasang di Obi (TBP, soalnya sinyal disono kehalang bukit) + yang di Ekor 
-                    di tuker sama yang baru. Lumayan kan hemat 150 juta.
-                  </p>
-                </div>
-            </li>
-          </ul>
-      </div>
+    <% end %>
+
+
+
+
+
+    <!--Footer-->
+    <div id="footer" class="separator"> 
+      <!-- Remove this notice or replace it with whatever you want --> 
+      &#169; Copyright 2011 Harita |  <a href="#">Top</a> </div>
+      <!--End .container--> 
     </div>
-
-
-    <div class="box"> 
-      <!--Title-->
-      <div class="header">
-        <h2><a href="#">Pembelian laptop untuk HEOS programmer Timur</a></h2>
-        <!--Draggable--> 
-        <span class="draggable"></span> <span class="toggle"></span> 
-      </div>
-        <!--Content-->
-      <div class="content padding">
-        <ul class="inbox">
-          <li> 
-            <!--Avatar--> 
-            <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-            <!--Author-->
-            <div class="author"> <a href="#"></a>
-              <h4><a href="#">Irfan Effendi</a></h4>
-            </div>
-            <!--Meta-->
-            <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-            <!--Body-->
-            <div class="body">
-              <p>
-                Bos, ini rencananya buat implementasi HEOS di timur, kita bakal modif sebagian kecil dari
-                alur HEOS agar sesuai dengan business process. Jadinya, kita nambah 3 programmer baru. Mereka ini 
-                kita pilih yang pengalaman: 5 tahun programming Java (bahasa yg dipake di HEOS). Typical salary
-                mereka itu 5 jt an. 
-                
-                Tapinya, untuk support programmer, kita butuh tambahan laptop nih. 
-              </p>
-            </div>
-          </li>
-              <!--separator-->
-          <li class="separator"></li>
-          <li> 
-              <!--Avatar--> 
-              <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-              <!--Author-->
-              <div class="author"> <a href="#"></a>
-                <h4><a href="#">Big Boss</a></h4>
-              </div>
-              <!--Meta-->
-              <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-              <!--Body-->
-              <div class="body">
-                <p>
-                  Ya sudah, kesini bawa IM, resume programmer2nya  yah. Saya mau lihat dulu.
-                </p>
-              </div>
-            </li>
-              <!--separator-->
-            <li class="separator"></li>
-            <li> 
-                <!--Avatar--> 
-                <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-                <!--Author-->
-                <div class="author"> <a href="#"></a>
-                  <h4><a href="#">Irfan Effendi</a></h4>
-                </div>
-                <!--Meta-->
-                <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-                <!--Body-->
-                <div class="body">
-                  <p>
-                    Siap bos.
-                  </p>
-                </div>
-            </li>
-          </ul>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-            <!--Forms-->
-            <div class="box">
-              <div class="header">
-                <h2>Form Styles</h2>
-                <!--Draggable--> 
-                <span class="draggable"></span> 
-                <!--Toggle--> 
-                <span class="toggle"></span> </div>
-                <div class="content padding"> 
-                  <!--Form Elements-->
-                  <form>
-                    <fieldset>
-                      <legend>Form Styles</legend>
-                      <div class="field">
-                        <label>Text Input</label>
-                        <input type="text" />
-                      </div>
-                      <div class="field">
-                        <label>Medium Text Input</label>
-                        <input type="text" class="medium" />
-                      </div>
-                      <div class="field">
-                        <label>Large Text Input</label>
-                        <input type="text" class="large" />
-                      </div>
-                      <div class="field">
-                        <label>Text Input</label>
-                        <input type="text" size="3" />
-                        -
-                        <input type="text" size="3" />
-                        -
-                        <input type="text" size="4" />
-                        <label class="help">(###) - ### - ####</label>
-                      </div>
-                      <div class="field">
-                        <label>File Input:</label>
-                        <input type="file"/>
-                      </div>
-                      <div class="field">
-                        <label>Select Input:</label>
-                        <select>
-                          <option>Option #1</option>
-                          <option>Option #2</option>
-                          <option>Option #3</option>
-                        </select>
-                      </div>
-                      <div class="field">
-                        <label>Radio Input:</label>
-                        <label>
-                          <input name="radio" type="radio" checked="checked" />
-                          Radio Option</label>
-                          <label>
-                            <input name="radio" type="radio" />
-                            Radio Option</label>
-                            <label>
-                              <input name="radio" type="radio" />
-                              Radio Option</label>
-                            </div>
-                            <div class="field">
-                              <label>Checkbox Inputs:</label>
-                              <label>
-                                <input type="checkbox" name="check" checked="checked" />
-                                Check Option</label>
-                                <label>
-                                  <input type="checkbox" name="check" />
-                                  Check Option</label>
-                                  <label>
-                                    <input type="checkbox" name="check" />
-                                    Check Option</label>
-                                  </div>
-                                  <div class="field">
-                                    <label>Textarea Input:</label>
-                                    <textarea rows="7" cols="50" ></textarea>
-                                  </div>
-                                  <button>Submit</button>
-                                  <button type="reset" class="secondary">Reset</button>
-                                  <button disabled>Disabled Button</button>
-                                </fieldset>
-                              </form>
-                            </div>
-                          </div>
-
-
-
-                          <!--Tabs-->
-                          <div class="box one_half"> 
-                            <!--Title-->
-                            <div class="header">
-                              <h2><a href="#">Tabs Willy</a></h2>
-                              <!--Draggable--> 
-                              <span class="draggable"></span> 
-                              <!--Toggle--> 
-                              <span class="toggle"></span> </div>
-                              <!--Content-->
-                              <div class="content">
-                                <div class="tabs"> 
-                                  <!--navigation-->
-                                  <ul class="navigation clearfix">
-                                    <li><a class="current" href="#tab1">Typography</a></li>
-                                    <li><a href="#tab2">Tab2</a></li>
-                                    <li><a href="#tab3">Tab3</a></li>
-                                  </ul>
-                                  <!--tabs-->
-                                  <div class="tab" id="tab1">
-                                    <h6>Content Tab1</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis.</p>
-                                  </div>
-                                  <div class="tab" id="tab2">
-                                    <h6>Content Tab2</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis.</p>
-                                  </div>
-                                  <div class="tab" id="tab3">
-                                    <h6>Content Tab3</h6>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis.</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!--Acordion-->
-                            <div class="box one_half last">
-                              <div class="header">
-                                <h2><a href="#">Acordion</a></h2>
-                                <span class="draggable"></span> <span class="toggle"></span> </div>
-                                <div class="content">
-                                  <div class="accordion">
-                                    <h2 class="panel"><a href="#">Panel 1</a></h2>
-                                    <div class="content">
-                                      <h6><a href="#modaldemo" rel="modal">Content Panel 1</a></h6>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    </div>
-                                    <h2 class="panel"><a href="#">Panel 2</a></h2>
-                                    <div class="content">
-                                      <h6><a href="#modaldemo" rel="modal">Content Panel 2</a></h6>
-                                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    </div>
-                                    <h2 class="panel"><a href="#">Panel 3</a></h2>
-                                    <div class="content">
-                                      <h6><a href="#modaldemo" rel="modal">Content Panel 3</a></h6>
-                                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at ligula ut augue dignissim lacinia quis id turpis. Praesent imperdiet ornare pharetra. Pellentesque lorem elit, tristique et sodales ac, lacinia nec sem. </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!--Inbox-->
-                              <div class="box"> 
-                                <!--Title-->
-                                <div class="header">
-                                  <h2><a href="#">Inbox Widget</a></h2>
-                                  <!--Draggable--> 
-                                  <span class="draggable"></span> <span class="toggle"></span> </div>
-                                  <!--Content-->
-                                  <div class="content padding">
-                                    <ul class="inbox">
-                                      <li> 
-                                        <!--Avatar--> 
-                                        <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-                                        <!--Author-->
-                                        <div class="author"> <a href="#"></a>
-                                          <h4><a href="#">Username</a></h4>
-                                        </div>
-                                        <!--Meta-->
-                                        <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-                                        <!--Body-->
-                                        <div class="body">
-                                          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt.
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
-                                          </div>
-                                        </li>
-                                        <!--separator-->
-                                        <li class="separator"></li>
-                                        <li> 
-                                          <!--Avatar--> 
-                                          <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-                                          <!--Author-->
-                                          <div class="author"> <a href="#"></a>
-                                            <h4><a href="#">Username</a></h4>
-                                          </div>
-                                          <!--Meta-->
-                                          <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-                                          <!--Body-->
-                                          <div class="body">
-                                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt.
-                                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
-                                            </div>
-                                          </li>
-                                          <!--separator-->
-                                          <li class="separator"></li>
-                                          <li> 
-                                            <!--Avatar--> 
-                                            <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-                                            <!--Author-->
-                                            <div class="author"> <a href="#"></a>
-                                              <h4><a href="#">Username</a></h4>
-                                            </div>
-                                            <!--Meta-->
-                                            <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-                                            <!--Body-->
-                                            <div class="body">
-                                              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
-                                            </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                    <!--Footer-->
-                                    <div id="footer" class="separator"> 
-                                      <!-- Remove this notice or replace it with whatever you want --> 
-                                      &#169; Copyright 2011 weyewe |  <a href="#">Top</a> </div>
-                                      <!--End .container--> 
-                                    </div>
-                                    <!--End #content--> 
-                                  </div>
+    <!--End #content--> 
+  </div>
 
 
 <!--content for adding new category -->
 <div id="modal_new_master_category" style="display:none;">
   <%# form_for @category, :html=> {:class => "modal_form"} do |f| %>
-    <%#= f.label :name  , "New Category Name" %>
-    <%#= f.text_field :name %>
-    <%#= f.submit "Submit", :class => "button modal_submit"%>
+  <%#= f.label :name  , "New Category Name" %>
+  <%#= f.text_field :name %>
+  <%#= f.submit "Submit", :class => "button modal_submit"%>
   <%# end %>
-<div>
-<!--demo content for facebox-->
-<div id="modaldemo" style="display:none;">
-  <ul class="inbox">
-    <li> 
-      <!--Avatar--> 
-      <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-      <!--Author-->
-      <div class="author"> <a href="#"></a>
-        <h4><a href="#">Username</a></h4>
-      </div>
-      <!--Meta-->
-      <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-      <!--Body-->
-      <div class="body">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
-      </div>
-    </li>
-    <!--separator-->
-    <li class="separator"></li>
-    <li> 
-      <!--Avatar--> 
-      <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-      <!--Author-->
-      <div class="author"> <a href="#"></a>
-        <h4><a href="#">Username</a></h4>
-      </div>
-      <!--Meta-->
-      <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-      <!--Body-->
-      <div class="body">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
-      </div>
-    </li>
-    <!--separator-->
-    <li class="separator"></li>
-    <li> 
-      <!--Avatar--> 
-      <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
-      <!--Author-->
-      <div class="author"> <a href="#"></a>
-        <h4><a href="#">Username</a></h4>
-      </div>
-      <!--Meta-->
-      <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
-      <!--Body-->
-      <div class="body">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
-      </div>
-    </li>
-  </ul>
-</div>
+  <div>
+  <!--demo content for facebox-->
+  <div id="modaldemo" style="display:none;">
+    <ul class="inbox">
+      <li> 
+        <!--Avatar--> 
+        <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
+        <!--Author-->
+        <div class="author"> <a href="#"></a>
+          <h4><a href="#">Username</a></h4>
+        </div>
+        <!--Meta-->
+        <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
+        <!--Body-->
+        <div class="body">
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
+        </div>
+      </li>
+      <!--separator-->
+      <li class="separator"></li>
+      <li> 
+        <!--Avatar--> 
+        <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
+        <!--Author-->
+        <div class="author"> <a href="#"></a>
+          <h4><a href="#">Username</a></h4>
+        </div>
+        <!--Meta-->
+        <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
+        <!--Body-->
+        <div class="body">
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
+        </div>
+      </li>
+      <!--separator-->
+      <li class="separator"></li>
+      <li> 
+        <!--Avatar--> 
+        <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
+        <!--Author-->
+        <div class="author"> <a href="#"></a>
+          <h4><a href="#">Username</a></h4>
+        </div>
+        <!--Meta-->
+        <div class="meta"> <a href="#">January 22, 2011 at 4:43 pm</a> - <a href="#">Reply</a> </div>
+        <!--Body-->
+        <div class="body">
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non nulla sapien, quis luctus felis. Fusce sodales tempus tincidunt. </p>
+        </div>
+      </li>
+    </ul>
+  </div>
 
 <%#= link_to "", edit_master_category_url(":id") , :style=>"display:none;" , :id=> "edit_category_link"%>
 <%#= link_to "", master_category_url(":id") , :style=>"display:none;" , :id=> "destroy_category_link"%>

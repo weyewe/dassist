@@ -1008,3 +1008,11 @@ button:active:disabled,
 	background-position: top !important;
 }
 /*@end*/
+
+
+/* User specific modification */
+div.content { display:none;}
+
+input[type=submit]{
+ cursor: pointer;
+}

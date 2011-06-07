@@ -1,4 +1,14 @@
 Dassist::Application.routes.draw do
+  match 'projects/sort' => 'projects#prioritize_tasks', :method => :post
+  resources :users do
+    resources :projects
+  end
+  
+  resources :projects do 
+    resources :messages
+  end
+  
+
   root :to => "welcome#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

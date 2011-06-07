@@ -220,6 +220,25 @@ $(document).ready(function()
 	  
 	});
 	
+	console.log("Before autoresizing");
+  // AutoResize
+  // $('textarea.autoResize').autoResize({
+  //       // On resize:
+  //       onResize : function() {
+  //           $(this).css({opacity:0.8});
+  //       },
+  //       // After resize:
+  //       animateCallback : function() {
+  //           $(this).css({opacity:1});
+  //       },
+  //       // Quite slow animation:
+  //       animateDuration : 300,
+  //       // More extra space:
+  //       extraSpace : 20
+  //   });
+  $('textarea.autoResize').autogrow();
+  console.log("After autoresizing");
+	
 	
 	// add the loader to all modal_submit
 	$("form input.modal_submit").each(function(){
@@ -227,7 +246,57 @@ $(document).ready(function()
 	  ajax_loader.attr("id", "");
 	  $(this).after( ajax_loader );
 	});
+	
+	var wrapperId = "#projects";
+	var itemIndicator = "div.box";
+	// add the sortable capability
+  $(wrapperId).sortable({
+    axis: 'y',
+    dropOnEmpty: false,
+    handle: '.draggable',
+    cursor: 'crosshair',
+    items: itemIndicator,
+    opacity: 0.4,
+    scroll: true,
+    update: function(){
+      var dataSortable = $('#projects').sortable('serialize');
+      // dataSortable += getArrayId( wrapperId , itemIndicator); 
+      // alert( dataSortable );
+      $.ajax({
+        type: 'post',
+        data: dataSortable,
+        dataType: 'script',
+        complete: function(request){
+          // $(this).effect('highlight');
+          console.log("changed");
+        },
+        url: '/projects/sort'})
+      }
+    });
+
+  $(document).ajaxSend(function(event, request, settings) {
+    // do nothing if this is a GET request. Rails doesn't need
+    // the authenticity token, and IE converts the request method
+    // to POST, just because - with love from redmond.
+    if (settings.type == 'GET') return;
+    if (typeof(AUTH_TOKEN) == "undefined") return;
+    settings.data = settings.data || "";
+    settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
+  });
 });
+
+
+function getArrayId( wrapperId , itemIndicator){
+  var idString = "";
+  $(wrapperId + " " + itemIndicator).each(function(){
+    idString += "&";
+    var id = $(this).attr("id").split("_")[1];
+    idString += "projectId[]=" + id;
+  });
+  
+  return idString;
+}
+
 
 function createLink( text, href ) {
   var link = "<a href=\"" +
@@ -237,3 +306,7 @@ function createLink( text, href ) {
               "</a>";
   return link;
 }
+
+$.ajaxSetup({ 
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})

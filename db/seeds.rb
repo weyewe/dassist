@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+Project.create :name => "Pembangunan menara Telkomsel" , :position => 1
+Project.create :name => "Strategy go live HEOS timur" , :position => 2
+Project.create :name => "Pembangunan smelter di Ekor" , :position => 3
