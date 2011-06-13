@@ -1016,3 +1016,5 @@ div.content { display:none;}
 input[type=submit]{
  cursor: pointer;
 }
+
+textarea.loading { color: rgb(150,150,150);}

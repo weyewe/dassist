@@ -220,24 +220,9 @@ $(document).ready(function()
 	  
 	});
 	
-	console.log("Before autoresizing");
-  // AutoResize
-  // $('textarea.autoResize').autoResize({
-  //       // On resize:
-  //       onResize : function() {
-  //           $(this).css({opacity:0.8});
-  //       },
-  //       // After resize:
-  //       animateCallback : function() {
-  //           $(this).css({opacity:1});
-  //       },
-  //       // Quite slow animation:
-  //       animateDuration : 300,
-  //       // More extra space:
-  //       extraSpace : 20
-  //   });
-  $('textarea.autoResize').autogrow();
-  console.log("After autoresizing");
+  
+  $('textarea.autoResize').autoGrow();
+  // console.log("After autoresizing");
 	
 	
 	// add the loader to all modal_submit
@@ -282,6 +267,28 @@ $(document).ready(function()
     if (typeof(AUTH_TOKEN) == "undefined") return;
     settings.data = settings.data || "";
     settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
+  });
+  
+  
+  //message posting from projects
+  $("form.form_message").submit(function(){
+    var currentForm = $(this);
+    var textArea = $("textarea.autoResize", currentForm );
+    textArea.addClass("loading");
+    console.log( "The destination is " + currentForm.attr("action"));
+    var formData = currentForm.serialize();
+    $.ajax({
+      url: currentForm.attr("action"),
+      type: 'post',
+      data: formData,
+      dataType: 'script',
+      success: function(){
+        console.log("ahaha, success");
+        textArea.removeClass("loading");
+      }
+    });
+    
+    return false;
   });
 });
 
