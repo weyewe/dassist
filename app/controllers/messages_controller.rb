@@ -5,12 +5,14 @@ class MessagesController < ApplicationController
   def create 
     @project = Project.find_by_id( params[:project_id])
     @message = @project.messages.new( params[:message] )
+    @message.user = current_user
     @message.save
-    render :nothing
-    # @message.user_id = current_user.id
-    # if @message.save
-    #   render :json
-    # else
-    # end
+    
+    
+    respond_to do |format|
+      format.html { render :action => "edit" }
+      format.xml  { render :xml => @message.errors, :status => :unprocessable_entity }
+      format.js {   }
+    end
   end
 end

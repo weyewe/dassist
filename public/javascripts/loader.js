@@ -175,55 +175,10 @@ $(document).ready(function()
 	$("#menu").superfish({ speed: 'fast',delay: 300,autoArrows: false });
 	
 	
-	//----------------------------
-	//     App-specific
-	//----------------------------
-	$("form#new_master_category input.modal_submit").live('click', function(){
-    $(this).hide();
-    var form = $(this).parents("form.modal_form");
-    $("img.ajax-loader", form).show();
-    $.ajax({
-      url: form.attr('action'),
-      type: "POST",
-      data: form.serialize(),
-      dataType: "json",
-      success: function( returnValue ){
-        // alert( returnValue.length ) ;
-        // add to the corresponding dataTable
-        // if save is successful
-        // addToDataTable( returnValue ); 
-        // else 
-        // add the error notification
-        // end
-        // console.log( returnValue instanceof Array  ) ;
-        //     console.log( returnValue );
-        //     
-        //     for( var property in  returnValue ) {
-        //       console.log( property );
-        //     }
-        var category = returnValue["category"];
-        var edit_href = $("a#edit_category_link").attr("href").replace(/:id/g, category["id"]);
-        var edit_link = createLink( "Edit", edit_href ) ;
-        var destroy_href = $("a#destroy_category_link").attr("href").replace(/:id/g, category["id"]);
-        var destroy_link = createLink( "Destroy" , destroy_href );
-        dataTableCollection["category"].fnAddData(
-            [category["name"], 29, edit_link + " | " + destroy_link ]
-          );
-        // $("table#category").fnAddData([category["name"], 29, "Boom | Desob"]);
-        
-        $.facebox.close(); 
-      }
-    });
-    
-    
-	  return false;
-	  
-	});
+
 	
-  
-  $('textarea.autoResize').autoGrow();
   // console.log("After autoresizing");
-	
+  $('textarea.autoResize').autoGrow();
 	
 	// add the loader to all modal_submit
 	$("form input.modal_submit").each(function(){
@@ -271,7 +226,7 @@ $(document).ready(function()
   
   
   //message posting from projects
-  $("form.form_message").submit(function(){
+  $("form.form_message").live( 'submit', function(){
     var currentForm = $(this);
     var textArea = $("textarea.autoResize", currentForm );
     textArea.addClass("loading");

@@ -1,0 +1,7 @@
+jQuery(document).ready(function($) {
+	$("div#project_<%= @message.project.id %> li.message-form").replaceWith(
+	  '<%= escape_javascript( render  :partial => "project_message_update" )%>');
+	  
+	//rebinding? 
+	
+});

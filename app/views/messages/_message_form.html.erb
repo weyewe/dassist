@@ -1,0 +1,18 @@
+<li class="message-form"> 
+  <!--Avatar--> 
+  <img alt="avatar" class="avatar" src="/images/assets/user.png" width="35" height="35"/> 
+  <!--Author-->
+  <div class="author"> <a href="#"></a>
+    <h4><a href="#"><%= current_user.name %></a></h4>
+  </div>
+  <!--Meta-->
+  <div class="meta"> </div>
+  <!--Body-->
+  <div class="body">
+    <% form_for project.messages.new, :url => project_messages_url( project.id ), 
+    :html => {:class=> "form_message" , :id => "form_project_message_#{project.id}"} do |f| %>
+      <%= f.text_area :content , :cols => 100, :rows => 1 ,:class => "autoResize" %><br />
+      <%= f.submit %>
+    <% end %>
+  </div>
+</li>
