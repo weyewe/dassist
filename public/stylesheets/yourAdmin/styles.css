@@ -1012,7 +1012,7 @@ button:active:disabled,
 
 /* User specific modification */
 div.content { display:none;}
-
+div.login-content { display:block;}
 input[type=submit]{
  cursor: pointer;
 }

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>yourAdmin | Login</title>
+  
+  <%= render :partial => "layouts/admin_css" %>
+  <%= render :partial => "layouts/admin_javascripts" %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+
+<!--Content-->
+<div id="content">
+  <div id="login" class="container"> 
+    <img class="logo" src="/images/assets/logo.png" alt="logo" />
+    <!--Login-->
+    <div class="box">
+      <div class="header">
+        <h2>Login</h2>
+      </div>
+      <div class="content login-content">
+        <div class="tabs"> 
+          <!--navigation-->
+          <ul class="navigation clearfix">
+            <li> <a class="current" href="#tab1">Login</a></li>
+            <li><a href="#tab2">Register</a></li>
+            <li><a href="#tab3">Recover Password</a></li>
+          </ul>
+          <!--tab1-->
+          <div class="tab" id="tab1">
+            <!-- <p class="message valid">
+              Sucess Message
+              <span class="close">X</span>
+            </p>
+            <p class="message invalid">
+              Error Message
+              <span class="close">X</span>
+            </p> -->
+            
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name),
+                         :html => {:class=>"form"}) do |f| %>
+              <p>
+                <%= f.label :email , :class => "field" %>
+                <%= f.email_field :email %>
+              </p>
+
+              <p>
+                <%= f.label :password, :class => "field" %>
+                <%= f.password_field :password %>
+              </p>
+
+              <p class="field">
+                <%= button_for("Submit", :button_type => "submit") %>
+                <%= button_for("Submit", :button_type => "submit", :class => "secondary") %>
+              </p>
+            <% end %>
+            
+            <!--             
+                        <form action="index.html" method="post" class="form">
+                          <p class="field">
+                            <label>Email </label>
+                            <input class="large" id="email-willy">
+                          </p>
+                          <p class="field">
+                            <label for="username">Password </label>
+                            <input id="username-willy" name="username" class="large">
+                          </p>
+                          <p class="field">
+                            <button type="submit">Submit</button>
+                            <button type="reset" class="secondary">Reset</button>
+                          </p>
+                        </form> -->
+          </div>
+          <!--tab2-->
+          <div class="tab" id="tab2">
+            <form action="#" method="post" class="form">
+              <p class="field">
+                <label for="username">Email </label>
+                <input id="username" name="username" class="large">
+              </p>
+              <!--               <p class="field">
+                              <label for="username">Password </label>
+                              <input name="email" type="password" class="large" id="email">
+                            </p> -->
+              <p class="field">
+                <button type="submit">Register</button>
+                <button type="reset" class="secondary">Reset</button>
+              </p>
+            </form>
+          </div>
+          <!--tab3-->
+          <div class="tab" id="tab3">
+            <form action="#" method="post" class="form">
+              <p>Your password will be sent to your email account.</p>
+              <p class="field">
+                <label for="username">Email </label>
+                <input id="username" name="username" class="large">
+              </p>
+              <p class="field">
+                <button type="submit">Submit</button>
+                <button type="reset" class="secondary">Reset</button>
+              </p>
+            </form>
+          </div>
+
+          <!--End .tabs-->
+        </div>    	
+        <!--End .content-->	
+      </div>
+      <!--End .box-->
+    </div>
+    <!--End .container-->
+  </div>
+  <!--End #content-->
+</div>
+</body>
+</html>

@@ -1,4 +1,6 @@
 Dassist::Application.routes.draw do
+  devise_for :users
+
   match 'projects/sort' => 'projects#prioritize_tasks', :method => :post
   resources :users do
     resources :projects

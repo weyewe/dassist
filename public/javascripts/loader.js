@@ -104,7 +104,7 @@ $(document).ready(function()
 		   return false;
 
 			});
-				
+			return false;
 		}); 
 	//----------------------------
 	//         Accordion
@@ -303,6 +303,7 @@ function getArrayId( wrapperId , itemIndicator){
   
   return idString;
 }
+
 
 
 function createLink( text, href ) {
